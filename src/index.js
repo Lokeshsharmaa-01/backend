@@ -20,6 +20,7 @@
 
 
 // require('dotenv').config({path: './env'})
+// first .env should run for providing all env info in the files
 import dotenv from "dotenv"
 import connectDB from "./db/index.js";
 import {app} from './app.js'
