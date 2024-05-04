@@ -52,6 +52,8 @@ const userSchema = new Schema(
     }
 )
 
+// runs just before save password
+
 userSchema.pre("save", async function (next) {
     if(!this.isModified("password")) return next();
 
@@ -65,6 +67,7 @@ userSchema.methods.isPasswordCorrect = async function(password){
 
 userSchema.methods.generateAccessToken = function(){
     return jwt.sign(
+        // paylod = data
         {
             _id: this._id,
             email: this.email,

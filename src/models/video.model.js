@@ -42,6 +42,6 @@ const videoSchema = new Schema(
     }
 )
 
-videoSchema.plugin(mongooseAggregatePaginate)
+videoSchema.plugin(mongooseAggregatePaginate) // learn more about aggregate pipe line
 
 export const Video = mongoose.model("Video", videoSchema)
